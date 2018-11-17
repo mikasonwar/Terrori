@@ -3,7 +3,6 @@ body {
 }
 .container {
   border-radius: 10px;
-  background-color: rgba(63, 66, 63, 0.47);
   flex-direction: column;
   align-content: center;
   align-items: center;
