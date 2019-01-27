@@ -1,11 +1,11 @@
 $(document).ready(function() {
     if(Cookies.get('color')=='white') {
         $("body").addClass("white");
-        $("#switchColor").innerHTML('Tema Claro');
+        $("#switchColor").html('Tema Claro');
     }
     else if(Cookies.get('color')=='black') {
         $("body").addClass("black");
-        $("#switchColor").innerHTML('Tema Escuro');
+        $("#switchColor").html('Tema Escuro');
     }
 
     //console.log("Teste");
