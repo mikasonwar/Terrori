@@ -1,9 +1,21 @@
 $(document).ready(function() {
-
+    if(Cookies.get('color')=='white') 
+        $("body").addClass("white").removeClass("black");
+    else 
+        $("body").addClass("black").removeClass("white");
 
     //console.log("Teste");
     console.log($('input[name=armadura]:checked', '#armadura').val());
-
+    $("#switchColor").click(function(){
+        if($("body").hasClass("white")) {            
+            $("body").addClass("black").removeClass("white");
+            Cookies.set('color','black');
+        }
+        else {
+            $("body").addClass("white").removeClass("black");
+            Cookies.set('color','white');
+        }
+    });
     
     $("#fatura").click(function(){
         //console.log($('input[name=armadura]:checked', '#armadura').val());

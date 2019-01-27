@@ -11,6 +11,31 @@ body {
   padding:20px;
   padding-bottom: 50px;
 }
+.principal {
+  background-color: rgba(63, 66, 63, 0.47);
+}
+.black {
+  background-color: #202225;
+  color:white;
+}
+.black input {
+  /*background-color: grey;*/
+  border-color: black;
+  /*color: white;*/
+  padding:2px 0 2px 5px;
+}
+.black #percentagem {
+  margin-right: 5px;
+}
+.black .container {
+  background-color: grey;
+}
+.black .conteudo {
+  background-color: grey;
+}
+.black .caixa {
+  background-color: grey;
+}
 .conteudo {
     margin: 10px; 
 }

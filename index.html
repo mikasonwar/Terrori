@@ -8,97 +8,98 @@
 
 
   <script src="autoignicao.js"></script>
+  <script src="js-cookie.js"></script>
     <link rel="stylesheet" type="text/css" href="autoignicao.css">
     <link rel="icon" href="autoignicao.png">
     <title>AutoIgnição</title>
   </head>
-  <body>
+  <body class="black">
+        <div class="container principal"> 
 
-    <div class="container" style="background-color: rgba(63, 66, 63, 0.47);">
-
-    
-
-        <div class="caixa">
-            <img src="autoignicao2.png" height="200" width="200">
-            <div class="container">
-                <div class="conteudo">
-                    <span>Valor do carro</span>
-                    <input type="number" id="carro" value="0">
-                </div>
-                <div class="conteudo"> 
-                        <span>Encontrar valor do carro pelo valor do turbo</span>
-                        <input type="number" id="turbo" value="0">
-                </div>
-            </div>
-        </div>
         
-        <div class="caixa">
-            <div class="conteudo">
-                <span>Armadura</span>
-                <form id="armadura">
-                        <span><input type="radio" name="armadura" value="0" checked="checked"> Nenhuma</span>
-                        <span><input type="radio" name="armadura" value="0.6977"> Nivel 1 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="armadura" value="0.8628"> Nivel 2 <input type="number" value="0" readonly></span>
-                </form>
+
+            <button id="switchColor">Tema Claro</button>
+            <div class="caixa">
+                <img src="autoignicao2.png" height="200" width="200">
+                <div class="container">
+                    <div class="conteudo">
+                        <span>Valor do carro</span>
+                        <input type="number" id="carro" value="0">
+                    </div>
+                    <div class="conteudo"> 
+                            <span>Encontrar valor do carro pelo valor do turbo</span>
+                            <input type="number" id="turbo" value="0">
+                    </div>
+                </div>
             </div>
             
-            <div class="conteudo">
-                <span>Motor</span>
-                <form id="motor">
-                        <span><input type="radio" name="motor" value="0" checked="checked"> Nenhuma</span>
-                        <span><input type="radio" name="motor" value="0.1195"> Nivel 1 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="motor" value="0"> Nivel 2 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="motor" value="0.4012"> Nivel 3 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="motor" value="0.6953"> Nivel 4 <input type="number" value="0" readonly></span>
-                </form>
-            </div>
+            <div class="caixa">
+                <div class="conteudo">
+                    <span>Armadura</span>
+                    <form id="armadura">
+                            <span><input type="radio" name="armadura" value="0" checked="checked"> Nenhuma</span>
+                            <span><input type="radio" name="armadura" value="0.6977"> Nivel 1 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="armadura" value="0.8628"> Nivel 2 <input type="number" value="0" readonly></span>
+                    </form>
+                </div>
+                
+                <div class="conteudo">
+                    <span>Motor</span>
+                    <form id="motor">
+                            <span><input type="radio" name="motor" value="0" checked="checked"> Nenhuma</span>
+                            <span><input type="radio" name="motor" value="0.1195"> Nivel 1 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="motor" value="0"> Nivel 2 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="motor" value="0.4012"> Nivel 3 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="motor" value="0.6953"> Nivel 4 <input type="number" value="0" readonly></span>
+                    </form>
+                </div>
 
-            <div class="conteudo">
-                <span>Suspensões</span>
-                <form id="suspensao">
-                        <span><input type="radio" name="suspensao" value="0" checked="checked"> Nenhuma</span>
-                        <span><input type="radio" name="suspensao" value="0.0372"> Nivel 1 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="suspensao" value="0.0744"> Nivel 2 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="suspensao" value="0.1488"> Nivel 3 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="suspensao" value="0.297696"> Nivel 4 <input type="number" value="0" readonly></span>
-                </form>
-            </div>
+                <div class="conteudo">
+                    <span>Suspensões</span>
+                    <form id="suspensao">
+                            <span><input type="radio" name="suspensao" value="0" checked="checked"> Nenhuma</span>
+                            <span><input type="radio" name="suspensao" value="0.0372"> Nivel 1 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="suspensao" value="0.0744"> Nivel 2 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="suspensao" value="0.1488"> Nivel 3 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="suspensao" value="0.297696"> Nivel 4 <input type="number" value="0" readonly></span>
+                    </form>
+                </div>
 
-            <div class="conteudo">
-                <span>Transmissões</span>
-                <form id="transmissao">
-                        <span><input type="radio" name="transmissao" value="0" checked="checked"> Nenhuma</span>
-                        <span><input type="radio" name="transmissao" value="0.1395"> Nivel 1 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="transmissao" value="0.2093"> Nivel 2 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="transmissao" value="0.3651"> Nivel 3 <input type="number" value="0" readonly></span>
-                </form>
-            </div>
+                <div class="conteudo">
+                    <span>Transmissões</span>
+                    <form id="transmissao">
+                            <span><input type="radio" name="transmissao" value="0" checked="checked"> Nenhuma</span>
+                            <span><input type="radio" name="transmissao" value="0.1395"> Nivel 1 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="transmissao" value="0.2093"> Nivel 2 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="transmissao" value="0.3651"> Nivel 3 <input type="number" value="0" readonly></span>
+                    </form>
+                </div>
 
-            <div class="conteudo">
-                <span>Travões</span>
-                <form id="travao">
-                        <span><input type="radio" name="travao" value="0" checked="checked"> Nenhuma</span>
-                        <span><input type="radio" name="travao" value="0.0465"> Nivel 1 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="travao" value="0.093"> Nivel 2 <input type="number" value="0" readonly></span>
-                        <span><input type="radio" name="travao" value="0.186"> Nivel 3 <input type="number" value="0" readonly></span>
-                </form>
-            </div>
+                <div class="conteudo">
+                    <span>Travões</span>
+                    <form id="travao">
+                            <span><input type="radio" name="travao" value="0" checked="checked"> Nenhuma</span>
+                            <span><input type="radio" name="travao" value="0.0465"> Nivel 1 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="travao" value="0.093"> Nivel 2 <input type="number" value="0" readonly></span>
+                            <span><input type="radio" name="travao" value="0.186"> Nivel 3 <input type="number" value="0" readonly></span>
+                    </form>
+                </div>
 
-            <div class="conteudo">
-                <span>Turbo</span>
-                <form id="turbo">
-                        <span><input type="radio" name="turbo" value="0" checked="checked"> Sem turbo</span>
-                        <span><input type="radio" name="turbo" value="0.104375"> Turbo <input type="number" value="0" readonly></span>
-                </form>
+                <div class="conteudo">
+                    <span>Turbo</span>
+                    <form id="turbo">
+                            <span><input type="radio" name="turbo" value="0" checked="checked"> Sem turbo</span>
+                            <span><input type="radio" name="turbo" value="0.104375"> Turbo <input type="number" value="0" readonly></span>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="final">
+                <input type="number" class="percentagem" id="percentagem" min="0" max="100" value="10">%<br>
+                <button id="fatura">Faturar</button>
+                <span id="resposta"></span>
             </div>
         </div>
-        
-        <div class="final">
-            <input type="number" id="percentagem" min="0" max="100" value="10">%<br>
-            <button id="fatura">Faturar</button>
-            <span id="resposta"></span>
-        </div>
-    </div>
 
   </body>
 
