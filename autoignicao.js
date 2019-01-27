@@ -1,10 +1,10 @@
 $(document).ready(function() {
     if(Cookies.get('color')=='white') {
-        $("body").addClass("white");
+        $("body").addClass("white").removeClass("black");
         $("#switchColor").html('Tema Claro');
     }
     else if(Cookies.get('color')=='black') {
-        $("body").addClass("black");
+        $("body").addClass("black").removeClass("white");
         $("#switchColor").html('Tema Escuro');
     }
 
