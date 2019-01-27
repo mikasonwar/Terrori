@@ -1,18 +1,24 @@
 $(document).ready(function() {
-    if(Cookies.get('color')=='white') 
-        $("body").addClass("white").removeClass("black");
-    else 
-        $("body").addClass("black").removeClass("white");
+    if(Cookies.get('color')=='white') {
+        $("body").addClass("white");
+        $("#switchColor").innerHTML('Tema Claro');
+    }
+    else if(Cookies.get('color')=='black') {
+        $("body").addClass("black");
+        $("#switchColor").innerHTML('Tema Escuro');
+    }
 
     //console.log("Teste");
     console.log($('input[name=armadura]:checked', '#armadura').val());
     $("#switchColor").click(function(){
         if($("body").hasClass("white")) {            
             $("body").addClass("black").removeClass("white");
+            $("#switchColor").html('Tema Escuro');
             Cookies.set('color','black');
         }
         else {
             $("body").addClass("white").removeClass("black");
+            $("#switchColor").html('Tema Claro');
             Cookies.set('color','white');
         }
     });
