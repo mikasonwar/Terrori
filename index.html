@@ -1,106 +1,358 @@
-<html><head><meta charset="UTF-8">
+<html lang="en">
 
-
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Questrial|Roboto+Mono" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/js-cookie.js"></script>
+    <script src="vendor/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap.min.css">
 
+    <script src="js/terrori.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/terrori.css">
+    <link rel="icon" href="img/terrori.png">
 
-  <script src="autoignicao.js"></script>
-  <script src="js-cookie.js"></script>
-    <link rel="stylesheet" type="text/css" href="autoignicao.css">
-    <link rel="icon" href="autoignicao.png">
-    <title>AutoIgnição</title>
-  </head>
-  <body class="white">
-        <div class="container principal"> 
+    <title>Terrori</title>
+</head>
 
-        
+<body class="white container">
+        <div class="row">
+            <div class="botoes col-md-12">
+                <button id="switchColor" class="btn btn-sm btn-primary" type="button">Tema Claro</button>
+            </div>
+            <div class="caixa col-md-12">
+                <div class="col-md-3">
+                    <img src="img/terrori.png" class="logo">
 
-            <button id="switchColor">Tema Claro</button>
-            <div class="caixa">
-                <img src="autoignicao2.png" height="200" width="200">
-                <div class="container">
+                </div>
+                <div class="col-md-9">
+                    <div>
+                        <h1>Terrori &trade;</h1>
+                    </div>
                     <div class="conteudo">
                         <span>Valor do carro</span>
-                        <input type="number" id="carro" value="0">
+                        <input class="form-control" type="number" id="carro" value="0">
                     </div>
-                    <div class="conteudo"> 
-                            <span>Encontrar valor do carro pelo valor do turbo</span>
-                            <input type="number" id="turbo" value="0">
+                    <div class="conteudo">
+                        <span>Encontrar valor do carro pelo valor do turbo</span>
+                        <input class="form-control" type="number" id="turbo" value="0">
                     </div>
                 </div>
             </div>
-            
-            <div class="caixa">
-                <div class="conteudo">
+        </div>
+        <div class="row">
+            <div class="caixa col-md-12 row">
+                <div class="conteudo col-md-4 form-group">
                     <span>Armadura</span>
                     <form id="armadura">
-                            <span><input type="radio" name="armadura" value="0" checked="checked"> Nenhuma</span>
-                            <span><input type="radio" name="armadura" value="0.6977"> Nivel 1 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="armadura" value="0.8628"> Nivel 2 <input type="number" value="0" readonly></span>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend input-group-empty">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="armadura" value="0" checked="checked"> 
+                                        Nenhuma
+                                    </span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="armadura" value="0.6977"> 
+                                        Nivel 1 
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="armadura" value="0.8628"> 
+                                        Nivel 2 
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
                     </form>
                 </div>
-                
-                <div class="conteudo">
+
+                <div class="conteudo col-md-4 form-group">
                     <span>Motor</span>
                     <form id="motor">
-                            <span><input type="radio" name="motor" value="0" checked="checked"> Nenhuma</span>
-                            <span><input type="radio" name="motor" value="0.1195"> Nivel 1 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="motor" value="0"> Nivel 2 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="motor" value="0.4012"> Nivel 3 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="motor" value="0.6953"> Nivel 4 <input type="number" value="0" readonly></span>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend input-group-empty">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="motor" value="0" checked="checked"> 
+                                        Nenhuma
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="motor" value="0.1195">
+                                        Nivel 1 
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="motor" value="0">
+                                        Nivel 2 
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="motor" value="0.4012">
+                                        Nivel 3 
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="motor" value="0.6953">
+                                        Nivel 4
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
-                <div class="conteudo">
+                <div class="conteudo col-md-4 form-group">
                     <span>Suspensões</span>
                     <form id="suspensao">
-                            <span><input type="radio" name="suspensao" value="0" checked="checked"> Nenhuma</span>
-                            <span><input type="radio" name="suspensao" value="0.0372"> Nivel 1 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="suspensao" value="0.0744"> Nivel 2 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="suspensao" value="0.1488"> Nivel 3 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="suspensao" value="0.297696"> Nivel 4 <input type="number" value="0" readonly></span>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend input-group-empty">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="suspensao" value="0" checked="checked"> 
+                                        Nenhuma
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="suspensao" value="0.0372">
+                                        Nivel 1
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="suspensao" value="0.0744">
+                                        Nivel 2
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="suspensao" value="0.1488">
+                                        Nivel 3
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="suspensao" value="0.297696">
+                                        Nivel 4
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
-                <div class="conteudo">
+                <div class="conteudo col-md-4 form-group">
                     <span>Transmissões</span>
                     <form id="transmissao">
-                            <span><input type="radio" name="transmissao" value="0" checked="checked"> Nenhuma</span>
-                            <span><input type="radio" name="transmissao" value="0.1395"> Nivel 1 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="transmissao" value="0.2093"> Nivel 2 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="transmissao" value="0.3651"> Nivel 3 <input type="number" value="0" readonly></span>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend input-group-empty">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="transmissao" value="0" checked="checked"> 
+                                        Nenhuma
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="transmissao" value="0.1395">
+                                        Nivel 1
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="transmissao" value="0.2093">
+                                        Nivel 2
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="transmissao" value="0.3651">
+                                        Nivel 3
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
-                <div class="conteudo">
+                <div class="conteudo col-md-4 form-group">
                     <span>Travões</span>
                     <form id="travao">
-                            <span><input type="radio" name="travao" value="0" checked="checked"> Nenhuma</span>
-                            <span><input type="radio" name="travao" value="0.0465"> Nivel 1 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="travao" value="0.093"> Nivel 2 <input type="number" value="0" readonly></span>
-                            <span><input type="radio" name="travao" value="0.186"> Nivel 3 <input type="number" value="0" readonly></span>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend input-group-empty">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="travao" value="0" checked="checked"> 
+                                        Nenhuma
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="travao" value="0.0465">
+                                        Nivel 1
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="travao" value="0.093">
+                                        Nivel 2
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="travao" value="0.186">
+                                        Nivel 3
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
                     </form>
                 </div>
 
-                <div class="conteudo">
+                <div class="conteudo col-md-4 form-group">
                     <span>Turbo</span>
                     <form id="turbo">
-                            <span><input type="radio" name="turbo" value="0" checked="checked"> Sem turbo</span>
-                            <span><input type="radio" name="turbo" value="0.104375"> Turbo <input type="number" value="0" readonly></span>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend input-group-empty">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="turbo" value="0" checked="checked"> 
+                                        Nenhuma
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <input class="form-check-input" type="radio" name="turbo" value="0.104375">
+                                        Turbo
+                                    </span>
+                                </div>
+                                <input class="form-control" type="number" value="0" readonly>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
-            
-            <div class="final">
-                <input type="number" class="percentagem" id="percentagem" min="0" max="100" value="10">%<br>
-                <button id="fatura">Faturar</button>
-                <span id="resposta"></span>
+
+
+            <div class="final col-md-12 row">
+                <div class="col-md-3">
+                    <div class="input-group mb-3">
+                        <input class="form-control" type="number" class="percentagem" id="percentagem" min="0" max="100" value="10">
+                        <div class="input-group-append">
+                            <span class="input-group-text">%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-9" id="alert" style="display: none;">
+                    <div class="alert alert-success" role="alert">
+                        <span id="resposta"></span>
+                        <button type="button" class="close" onclick="$('#alert').fadeOut()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button id="fatura" type="button" class="btn btn-sm btn-success">Faturar</button>
+                </div>
             </div>
         </div>
 
-  </body>
+    </body>
+</body>
 
 </html>
